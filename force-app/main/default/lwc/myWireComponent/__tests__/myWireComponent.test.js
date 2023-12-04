@@ -16,7 +16,11 @@ describe('c-my-wire-component', () => {
             is: MyWireComponent
         });
         document.body.appendChild(element);
-    })
+    });
+    afterEach(() => {
+        jest.clearAllMocks()
+    });
+
     it('renders correct records', () => {
         const element = document.querySelector('c-my-wire-component')
         getCotactListAdapter.emit(mockGetcontactList)
